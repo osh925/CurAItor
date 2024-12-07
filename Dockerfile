@@ -9,7 +9,7 @@ WORKDIR /app
 
 # 파일 복사 및 설치
 COPY . .
-RUN pip install --upgrade pip && pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r app/requirements.txt
 
 # CLIP 모델 미리 다운로드 (optional)
 RUN python -c "from transformers import CLIPProcessor, CLIPModel; CLIPModel.from_pretrained('openai/clip-vit-base-patch16'); CLIPProcessor.from_pretrained('openai/clip-vit-base-patch16')"
@@ -23,4 +23,4 @@ COPY app/ .
 EXPOSE 8000
 
 # FastAPI 서버 실행
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8000"]

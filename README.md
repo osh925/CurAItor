@@ -25,3 +25,13 @@ docker build -t curaitor .
 `Qwen2-Audio-7B` 모델이 상당히 무겁고 inference가 느립니다. 단독으로 사용해 보면 음원파일의 물리적인 분석(조성, 템포 같은 것)에 상당히 집착하는 것으로 보이는데 task에 맞게 fine-tuning할 수 있다면 더 좋을 것입니다. 현 버전에서는 prompt engineering 수준에서 적당히 때우고 넘겼습니다. 
 
 원래 목표는 그림 띄워 주면서 작기 및 작품 이름 정도는 같이 알려주고 싶었는데, 안타깝게도 `wikiart` 데이터셋은 원래 비전 모델 트레이닝셋이라 작품 이름은 데이터베이스에 포함되어 있지 않았습니다. 일일이 labeling하기는 기말이 급했기 때문에 넘어가 주시면 고맙겠습니다...
+
+## Citation
+'''
+@article{Qwen2-Audio,
+  title={Qwen2-Audio Technical Report},
+  author={Chu, Yunfei and Xu, Jin and Yang, Qian and Wei, Haojie and Wei, Xipin and Guo,  Zhifang and Leng, Yichong and Lv, Yuanjun and He, Jinzheng and Lin, Junyang and Zhou, Chang and Zhou, Jingren},
+  journal={arXiv preprint arXiv:2407.10759},
+  year={2024}
+}
+'''

@@ -6,6 +6,6 @@ image
 librosa
 accelerate>=0.26.0
 matplotlib
-#deeplake
-#streamlit
+streamlit
+#deeplake << enable this if you want to build your custom image set
 #python=3.8

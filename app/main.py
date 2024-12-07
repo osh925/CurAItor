@@ -1,4 +1,5 @@
 from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import FileResponse
 from model.audiomodel import Audio2Text
 from model.clipmodel import Text2Image
 import os
@@ -21,23 +22,20 @@ async def upload_file(file: UploadFile = File(...)):
     with open(file_location, "wb") as f:
         f.write(await file.read())
     
-    # Step 2: interpret 호출
+    # Step 2: qwen2 호출
     interpretation = aud_model.retrieve(file_location)  # 오디오에서 텍스트(분위기, 장르) 추출
     
-    # Step 3: curation 호출
+    # Step 3: clip 호출
     curation_path = vis_model.retrieve(interpretation)  # 텍스트(분위기, 장르)에서 유사성 높은 이미지 검색
-    
+
     # Step 4: 업로드 디렉터리 정리
     for uploaded_file in os.listdir(UPLOAD_DIR):
         file_path = os.path.join(UPLOAD_DIR, uploaded_file)
         if os.path.isfile(file_path):
             os.remove(file_path)
 
-    # 결과 반환
-    return {
-        "text_interpretation": interpretation,
-        "curation_result": curation_path,  # 생성된 이미지 경로
-    }
+    # Step 5: 이미지 파일 반환
+    return FileResponse(curation_path, media_type="image/png", filename=os.path.basename(curation_path))
 
 
 #### Not used in practice, just for debuging ####

@@ -27,7 +27,7 @@ docker build -t curaitor .
 원래 목표는 그림 띄워 주면서 작기 및 작품 이름 정도는 같이 알려주고 싶었는데, 안타깝게도 `wikiart` 데이터셋은 원래 비전 모델 트레이닝셋이라 작품 이름은 데이터베이스에 포함되어 있지 않았습니다. 일일이 labeling하기는 기말이 급했기 때문에 넘어가 주시면 고맙겠습니다...
 
 ## Citation
-'''json
+'''bash
 @article{Qwen2-Audio,
   title={Qwen2-Audio Technical Report},
   author={Chu, Yunfei and Xu, Jin and Yang, Qian and Wei, Haojie and Wei, Xipin and Guo,  Zhifang and Leng, Yichong and Lv, Yuanjun and He, Jinzheng and Lin, Junyang and Zhou, Chang and Zhou, Jingren},

@@ -10,7 +10,16 @@
 
 ## How to Run
 
+### Access via Distributed Webpage
+
+[CurAItor](https://curaitor.streamlit.app/)
+
 ### Building Docker Image from Local
+
+1. Docker 이미지 빌드:
+```bash
+docker build -t curaitor .
+```
 
 ## Expected Improvements
 `Qwen2-Audio-7B` 모델이 상당히 무겁고 inference가 느립니다. 단독으로 사용해 보면 음원파일의 물리적인 분석(조성, 템포 같은 것)에 상당히 집착하는 것으로 보이는데 task에 맞게 fine-tuning할 수 있다면 더 좋을 것입니다. 현 버전에서는 prompt engineering 수준에서 적당히 때우고 넘겼습니다. 

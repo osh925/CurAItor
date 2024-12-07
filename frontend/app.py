@@ -10,7 +10,7 @@ st.subheader("Fine Art Curation Based on Your Music Taste")
 # 파일 업로드 위젯
 uploaded_file = st.file_uploader("Upload an mp3 file", type=["mp3"])
 
-FASTAPI_URL = "http://27.65.251.41:8000/upload/"
+FASTAPI_URL = "http://183.20.128.57:8000/upload/"
 
 if uploaded_file is not None:
     st.audio(uploaded_file, format="audio/mp3")

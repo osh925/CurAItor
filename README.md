@@ -12,6 +12,8 @@
 
 ### Access via Distributed Webpage
 
+현재 vast.ai에서 `docker pull` 명령을 실행시키는데 실패하여 이 방법으로 접근 불가
+
 [CurAItor](https://curaitor.streamlit.app/)
 
 ### Building Docker Image from Local

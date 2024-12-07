@@ -1,1 +1,1 @@
-# cover-art-gen
+# CurAItor

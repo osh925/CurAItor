@@ -1,0 +1,4 @@
+app/testfile/
+app/datagetter.py
+app/localtest.py
+*__pycache__
